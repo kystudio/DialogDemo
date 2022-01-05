@@ -18,10 +18,10 @@ class CDialog(context: Context) : BaseDialog(context), View.OnClickListener {
 
     override fun intercept(chain: DialogChain) {
         super.intercept(chain)
-        val isShow = true // 这里可根据实际业务场景来定制dialog 显示条件。
+        val isShow = true // 这里可根据实际业务场景来定制dialog 显示条件
         if (isShow) {
             this.show()
-        } else { // 当自己不具备弹出条件的时候，可以立刻把请求转交给下一个拦截器。
+        } else { // 当自己不具备弹出条件的时候，可以立刻把请求转交给下一个拦截器
             chain.process()
         }
     }
